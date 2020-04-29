@@ -4,6 +4,7 @@
  */
 
 function length(str) {
+    console.log(str.length)
 }
 
 /**
@@ -12,6 +13,8 @@ function length(str) {
  */
 
 function lengthIsEven(str) {
+    const isEven = str.length % 2 === 0
+    return isEven
 }
 
 /**
@@ -20,6 +23,8 @@ function lengthIsEven(str) {
  */
 
 function firstChar(str) {
+    const firest = str.substr(0, 1)
+    return firest
 }
 
 /**
@@ -29,6 +34,8 @@ function firstChar(str) {
  */
 
 function substring(str, a, b) {
+    const sub = str.substr(a, b)
+    return sub
 }
 
 /**
@@ -44,6 +51,8 @@ function substring(str, a, b) {
  */
 
 function isInclude(a, b) {
+    const is = a.includes(b)
+    return is
 }
 
 /**
@@ -59,4 +68,7 @@ function isInclude(a, b) {
  */
 
 function isPalindrome(str) {
+    const palindrome = str.split("").reverse().join("")
+    return str === palindrome
+
 }

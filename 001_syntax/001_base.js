@@ -4,6 +4,7 @@
  *
  */
 function helloWorld() {
+    console.log("Hello World")
 }
 
 /**
@@ -11,6 +12,8 @@ function helloWorld() {
  *
  */
 function displayConst() {
+    const display = "Hello World2"
+    console.log(display)
 }
 
 /**
@@ -18,13 +21,18 @@ function displayConst() {
  *
  */
 function displayLet() {
+    let display = "Hello World3"
+    console.log(display)
 }
+
 
 /**
  *  1.4 引数に渡した変数を表示するメソッドを実装してください
  *
  */
 function displayArgument(arg) {
+    const Argument = arg
+    console.log(arg)
 }
 
 /**
@@ -32,6 +40,8 @@ function displayArgument(arg) {
  *
  */
 function sumTwoArgs(a, b) {
+    const sum = a + b
+    return sum
 }
 
 /**
@@ -39,6 +49,8 @@ function sumTwoArgs(a, b) {
  *
  */
 function subtractTwoArgs(a, b) {
+    const subtract = a - b
+    return subtract
 }
 
 /**
@@ -46,6 +58,8 @@ function subtractTwoArgs(a, b) {
  *
  */
 function quotientTwoArgs(a, b) {
+    const quotient = a / b
+    return quotient
 }
 
 /**
@@ -53,6 +67,8 @@ function quotientTwoArgs(a, b) {
  *
  */
 function productTwoArgs(a, b) {
+    const product = a * b
+    return product
 }
 
 /**
@@ -60,6 +76,8 @@ function productTwoArgs(a, b) {
  *
  */
 function remainderTwoArgs(a) {
+    const remainder = a % 2
+    return remainder
 }
 
 /**
@@ -67,6 +85,8 @@ function remainderTwoArgs(a) {
  *
  */
 function isEven(a) {
+    const Even = a % 2 === 0
+    return Even
 }
 
 /**
@@ -74,4 +94,6 @@ function isEven(a) {
  *
  */
 function concatString(a, b) {
+    const concat = a + b
+    return concat
 }

@@ -11,8 +11,15 @@
  *    [5, 3, 2, 1], 6 => -1
  */
 
-function linearSearch (array, target) {
-  return -1
+function linearSearch(array, target) {
+  var search = -1
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === target) {
+      search = i
+      break
+    }
+  }
+  return search
 }
 
 /**
@@ -25,7 +32,22 @@ function linearSearch (array, target) {
  *    [1, 2, 3, 4] 5 => -1
  */
 
-function binarySearch (array, target) {
-  return -1
-}
+function binarySearch(array, target) {
+  var search = -1
+  var left = 0;
+  var right = array.length - 1;
+  while (left <= right) {
 
+    middle = Math.floor((left + right) / 2);
+
+    if (array[middle] == target) {
+      search = middle;
+      break;
+    } else if (array[middle] < target) {
+      left = middle + 1;
+    } else {
+      right = middle - 1;
+    }
+  }
+  return search
+}

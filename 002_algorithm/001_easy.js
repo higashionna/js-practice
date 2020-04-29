@@ -22,9 +22,21 @@
  *    ...
  */
 
-function fizzBuzz () {
+function fizzBuzz() {
+  for (let i = 0; i <= 100; i++) {
+    let str = ''
+    if (i % 3 === 0) {
+      str = 'Fizz'
+    }
+    if (i % 5 === 0) {
+      str = 'Buzz'
+    }
+    if (i % 3 === 0 && i % 5 === 0) {
+      str = 'FizzBuzz'
+    }
+    console.log(i + ' ' + str)
+  }
 }
-
 /**
  *  2.1.2 配列の合計
  *
@@ -38,8 +50,10 @@ function fizzBuzz () {
  */
 
 function sum(array) {
-  return
+  return array.reduce((acc, value) => acc + value)
 }
+
+
 
 /**
  *  2.1.3 配列の最大値と最小値
@@ -54,6 +68,9 @@ function sum(array) {
  */
 
 function minMax(array) {
+  const max = Math.max.apply(null, array)
+  const min = Math.min.apply(null, array)
+  return "max: " + max + "," + "min: " + min
 }
 
 /**
@@ -68,7 +85,8 @@ function minMax(array) {
  *
  */
 function reverse(str) {
-  return
+  const palindrome = str.split("").reverse().join("")
+  return palindrome
 }
 
 /**
@@ -83,7 +101,14 @@ function reverse(str) {
  *
  */
 function rotate(str, num) {
-  return
+  if (num >= 0) {
+    catBefoer = str.substring(0, str.length - num)
+    catAffter = str.substring(str.length - num)
+  } else {
+    catBefoer = str.substring(0, - num)
+    catAffter = str.substring(0 - num)
+  }
+  return catAffter + catBefoer
 }
 
 /**
@@ -98,7 +123,8 @@ function rotate(str, num) {
  *
  */
 function countStr(s1, s2) {
-  return
+  count = s1.split(s2).length - 1
+  return count
 }
 
 /**
@@ -116,7 +142,20 @@ function countStr(s1, s2) {
  *
  */
 function isPrime(num) {
-  return
+  if (num === 1) {
+    return false
+  } else if (num === 2) {
+    return true
+  } else {
+    for (let i = 2; i < num; i++) {
+      if (num % i === 0) {
+        return false
+      }
+      if (i + 1 === num) {
+        return true
+      }
+    }
+  }
 }
 
 /**
@@ -135,5 +174,13 @@ function isPrime(num) {
  *
  */
 function sumWithout4andNext(array) {
-  return
+  const arrayNew = []
+
+  for (let i = 0; i < array.length; i++) {
+    x = array[i]
+    x === 4 ? i++ : arrayNew.push(x)
+  }
+  arrayNew.length === 0 ? sumWithout4 = 0 :
+    sumWithout4 = arrayNew.reduce((acc, value) => acc + value)
+  return sumWithout4
 }

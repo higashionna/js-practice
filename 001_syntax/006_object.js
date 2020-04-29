@@ -8,6 +8,12 @@
  */
 
 function getPersonObject() {
+    const person = {
+        name: 'bob',
+        age: 32,
+        gender: 'male',
+    }
+    return person
 }
 
 /**
@@ -25,6 +31,14 @@ function getPersonObject() {
  */
 
 function mutateObject(person) {
+    let dataA = person
+    const dataB = {
+        name: 'Mary',
+        age: 37,
+        gender: 'female',
+    }
+    dataA = Object.assign(dataA, dataB)
+    return dataA
 }
 
 /**
@@ -49,7 +63,13 @@ function mutateObject(person) {
  */
 
 function assignNumber(persons) {
+    let assign = {}
+    persons.forEach(person => {
+        assign[person] = Math.trunc(Math.random() * 10)
+    })
+    return assign
 }
+
 
 /**
  *  6.4 配列に重複した要素があれば、true、そうでなければfalseを返す関数を実装してください
@@ -63,4 +83,7 @@ function assignNumber(persons) {
  */
 
 function isDuplicate(array) {
+    const setArray = new Set(array)
+    const isArray = array.length !== setArray.size
+    return isArray
 }

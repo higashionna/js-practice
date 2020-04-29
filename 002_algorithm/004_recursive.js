@@ -10,8 +10,9 @@
  *    30 => 55
  */
 
-function sumSequence (n, sum = 0) {
-  return n
+function sumSequence(n, sum = 0) {
+  if (n === sum) return sum
+  return sumSequence(n - 1) + n
 }
 
 /**
@@ -24,8 +25,18 @@ function sumSequence (n, sum = 0) {
  *    input: 10 => [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
  */
 
-function fibonacci (num, index = 0, array = []) {
-  return num
+function fibonacci(num, index = 0, array = []) {
+  if (num == 0) {
+    return array
+  }
+
+  if (index === 0 || index === 1) {
+    array.push(1)
+    return fibonacci(num - 1, index + 1, array)
+  }
+
+  array.push(array[index - 2] + array[index - 1])
+  return fibonacci(num - 1, index + 1, array)
 }
 
 
@@ -81,8 +92,16 @@ function fibonacci (num, index = 0, array = []) {
  *    => 38
  */
 
-function fileSize (node, sum = 0) {
-  return sum
-}
+function fileSize(node, sum = 0) {
+  if (!node.children) {
+    return sum + node.size
+  }
 
+  return node.children.reduce((acc, value) => {
+    if (value.children) {
+      return acc + fileSize(value)
+    }
+    return acc + value.size
+  }, sum)
+}
 
